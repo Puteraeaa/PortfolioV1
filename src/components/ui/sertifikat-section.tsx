@@ -10,7 +10,7 @@ export default function SertifikatSection() {
         className='text-3xl md:text-4xl text-center font-semibold tracking-wide underline underline-offset-8 decoration-cyan-400'
         data-aos='fade'
       >
-        Sertifikat
+        Training Certification and Achievement
       </h1>
 
       <div
@@ -25,42 +25,33 @@ export default function SertifikatSection() {
 
 export const projects = [
   {
-    title: 'SycleStore',
-    description:
-      'A platform dedicated to providing fast, reliable, and affordable game top-ups.',
-    link: 'https://syclestore.com',
-    url: '/images/syclestore.png',
+    title: 'Google Certificate UI/UX (Beginer)',
+    description: 'Sertifikat Kelulusan Google',
+    link: '',
+    url: '/images/sertifikat/Coursera-UI.jpg',
   },
   {
-    title: 'ShortPath',
-    description:
-      'A sleek solution designed to manage and shorten your super long links.',
-    link: 'https://www.shortpath.site',
-    url: '/images/shortpath.jpeg',
+    title: 'Global Game Jam 2024 x Create In Bogor',
+    description: 'Serifikat Peserta Global Game Jam 2024',
+    link: '',
+    url: '/images/sertifikat/cib.jpg',
   },
   {
-    title: 'Terminal Portfolio',
-    description: 'Personal portfolio with a command-line interface.',
-    link: 'https://terminal-portofolio.vercel.app/',
-    url: '/images/terminal-portfolio.jpeg',
+    title: 'OSSN 2024',
+    description: 'Pemenang Mendali Emas OSSN 2024',
+    link: 'https://drive.google.com/file/d/1VVl-G8cQWCPBAPKNCpFhzLauMpw4FyaM/view?usp=sharing',
+    url: '/images/sertifikat/ossn-2024.jpg',
   },
   {
-    title: 'Wedding Invitation',
-    description: 'Digital wedding invitation with an RSVP form.',
-    link: 'https://e-invitation-black-and-white.vercel.app/',
-    url: '/images/e-invitation-black-and-white.png',
+    title: 'Memulai Dasar Pemrograman untuk Menjadi Pengembang Software',
+    description: 'Sertifikat Kelulusan Dicoding',
+    link: 'https://www.dicoding.com/certificates/1RXYENK99ZVM',
+    url: '/images/sertifikat/dicoding-mdp.png',
   },
   {
-    title: 'TailGuide',
-    description: 'Interactive tools to generate TailwindCSS code.',
-    link: 'https://tailguide.vercel.app/',
-    url: '/images/tailguide.jpeg',
-  },
-  {
-    title: 'Expense Tracker',
-    description:
-      'App to enable users to effortlessly record and manage their expenses.',
-    link: 'https://github.com/rtrivaldo/expense-tracker',
-    url: '/images/expense-tracker.jpeg',
+    title: 'Belajar Dasar Pemrograman Web',
+    description: 'Sertifikat Kelulusan Dicoding',
+    link: 'https://www.dicoding.com/certificates/1RXYENK99ZVM',
+    url: '/images/sertifikat/dicoding-bdp.png',
   },
 ];

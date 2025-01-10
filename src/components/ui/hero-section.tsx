@@ -33,14 +33,14 @@ export default function HeroSection() {
                                 </span>
                             </LinkPreview>{" "}
                             <span className="opacity-30 animate-dimmed [animation-delay:2000ms]">who craft</span> <br className="hidden sm:block" />
-                            <LinkPreview url="#projects" imageSrc="images/projects.jpeg" isStatic>
+                            <LinkPreview url="#projects" imageSrc="images/projects.png" isStatic>
                                 <span className="text-cyan-400 opacity-30 animate-dimmed [animation-delay:1100ms]" onClick={() => lenis && lenis.scrollTo("#projects", { offset: -100, easing: cubicBezier(0.65, 0, 0.35, 1), duration: 1 })}>
                                     digital experiences.
                                 </span>
                             </LinkPreview>
                         </h1>
                     </div>
-                    <p className="hidden md:block lg:mt-4 font-semibold text-lg underline underline-offset-8 decoration-cyan-400 decoration-2 opacity-0 animate-fade-down [animation-delay:2500ms]">Fullstack Capable</p>
+                    <p className="mt-[-15px] md:mt-0 md:block lg:mt-4 font-semibold text-lg underline underline-offset-8 decoration-cyan-400 decoration-2 opacity-0 animate-fade-down [animation-delay:2500ms]">Fullstack Capable</p>
                 </div>
 
                 <div className="absolute bottom-0 left-0 w-full flex justify-center pb-10 overflow-y-hidden" onClick={() => lenis && lenis.scrollTo("#about", { offset: -100, easing: cubicBezier(0.65, 0, 0.35, 1), duration: 1 })}>

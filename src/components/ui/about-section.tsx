@@ -90,38 +90,40 @@ const AboutSection: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center"
-          onClick={() => setIsOpen(false)} // Close modal on overlay click
-        >
-          {/* Modal Content */}
-          <div
-            className="bg-[#020817] rounded-lg w-full md:w-3/4 lg:w-1/2  p-6 relative"
-            onClick={(e) => e.stopPropagation()} // Prevent overlay click from closing modal
-          >
-            {/* Close Button */}
-            <button
-              className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 focus:outline-none"
-              onClick={() => setIsOpen(false)}
-            >
-              ✕
-            </button>
+  <div
+    className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center"
+    onClick={() => setIsOpen(false)} // Close modal on overlay click
+  >
+    {/* Modal Content */}
+    <div
+      className="bg-[#020817] rounded-lg w-full max-w-lg md:max-w-2xl lg:max-w-3xl p-4 md:p-6 relative mx-2 sm:mx-4"
+      onClick={(e) => e.stopPropagation()} // Prevent overlay click from closing modal
+    >
+      {/* Close Button */}
+      <button
+        className="absolute top-3 right-3 text-gray-400 hover:text-gray-200 focus:outline-none"
+        onClick={() => setIsOpen(false)}
+      >
+        ✕
+      </button>
 
-            {/* Modal Header */}
-            <h2 className="text-xl font-semibold mb-4">Google Drive Content</h2>
+      {/* Modal Header */}
+      <h2 className="text-lg md:text-xl font-semibold mb-4 text-white text-center">
+        Curriculum Vitae
+      </h2>
 
-            {/* iframe Content */}
-            <div className="w-full h-[80vh] ">
-              <iframe
-                src="https://drive.google.com/file/d/1lryqzu1KsrAamFgtOu3fEe8MabGEHzDM/preview"
-                title="Google Drive Content"
-                className="w-full h-full rounded-lg scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-800"
-                allow="autoplay"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* iframe Content */}
+      <div className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
+        <iframe
+          src="https://drive.google.com/file/d/1lryqzu1KsrAamFgtOu3fEe8MabGEHzDM/preview"
+          title="Google Drive Content"
+          className="w-full h-full rounded-lg scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-800"
+          allow="autoplay"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 };

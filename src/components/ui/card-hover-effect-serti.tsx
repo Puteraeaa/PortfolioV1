@@ -26,7 +26,7 @@ export const HoverEffect = ({
 
     return (
         <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
+            modules={[Navigation, Autoplay]}
             spaceBetween={20}
             slidesPerView={1}
             breakpoints={{
@@ -34,54 +34,50 @@ export const HoverEffect = ({
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },
             }}
-            pagination={{
-                clickable: true,
-                dynamicBullets: true,
-                bulletActiveClass: "swiper-pagination-bullet-active",
-                el: '.custom-pagination',
-            }}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             loop
             className={cn("w-full overflow-hidden ", className)}
         >
             {items.map((item, idx) => (
-                <SwiperSlide key={item?.link}>
-                    <Link
-                        href={item?.link}
-                        className="relative group block p-2 h-full w-full "
-                        onMouseEnter={() => setHoveredIndex(idx)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                    >
-                        <AnimatePresence>
-                            {hoveredIndex === idx && (
-                                <motion.span
-                                    className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl "
-                                    layoutId="hoverBackground"
-                                    initial={{ opacity: 0 }}
-                                    animate={{
-                                        opacity: 1,
-                                        transition: { duration: 0.15 },
-                                    }}
-                                    exit={{
-                                        opacity: 0,
-                                        transition: { duration: 0.15, delay: 0.2 },
-                                    }}
-                                />
-                            )}
-                        </AnimatePresence>
-                        <Card>
-                            <Image
-                                src={item?.url}
-                                alt={item?.title}
-                                width={1920}
-                                height={1080}
-                                className="w-full h-auto rounded-md"
+                <SwiperSlide key={item?.link || idx}>
+                <Link
+                    href={item?.link || "#"}
+                    className={`relative group block p-2 h-full w-full ${
+                        !item?.link ? "pointer-events-none cursor-not-allowed " : ""
+                    }`}
+                    onMouseEnter={() => setHoveredIndex(idx)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                >
+                    <AnimatePresence>
+                        {hoveredIndex === idx && (
+                            <motion.span
+                                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
+                                layoutId="hoverBackground"
+                                initial={{ opacity: 0 }}
+                                animate={{
+                                    opacity: 1,
+                                    transition: { duration: 0.15 },
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    transition: { duration: 0.15, delay: 0.2 },
+                                }}
                             />
-                            <CardTitle>{item?.title}</CardTitle>
-                            <CardDescription>{item?.description}</CardDescription>
-                        </Card>
-                    </Link>
-                </SwiperSlide>
+                        )}
+                    </AnimatePresence>
+                    <Card>
+                        <Image
+                            src={item?.url || "/default-image.jpg"}
+                            alt={item?.title || "Default Title"}
+                            width={1920}
+                            height={1080}
+                            className="w-full h-auto rounded-md"
+                        />
+                        <CardTitle>{item?.title || "Untitled"}</CardTitle>
+                        <CardDescription>{item?.description || "No description available."}</CardDescription>
+                    </Card>
+                </Link>
+            </SwiperSlide>            
             ))}
                  <div className="custom-pagination "></div>
         </Swiper>
