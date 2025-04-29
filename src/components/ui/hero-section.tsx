@@ -19,21 +19,21 @@ export default function HeroSection() {
         {/* Left: Text */}
         <div className="flex-1 pt-[300px] lg:pt-0  lg:text-left">
           <h1 className="text-4xl sm:text-5xl md:text-3xl font-bold leading-tight tracking-tight">
-            <span className="inline-block animate-fade-in-up delay-200">Hi, I&apos;m</span>
+            <span className="inline-block animate-fade-in-up delay-200">Hi, Hi, I&apos;m</span>{" "}
             <br />
             <span className="bg-cyan-400 text-transparent bg-clip-text animate-gradient-text text-[2rem] sm:text-[3.4rem] md:text-[3rem]">
               Muhamad Putera Alfadri
-            </span>
+            </span>{" "}
             <br />
             <span className="text-white">
               A{" "}
               <span className="text-cyan-400">frontend developer</span>,<br />
               who craft <span className="font-semibold text-white">digital experiences</span>.
-            </span>
+            </span>{" "}
           </h1>
           <p className="mt-6 text-lg font-medium underline underline-offset-8 decoration-cyan-400 decoration-2">
             Fullstack Capable
-          </p>
+          </p>{" "}
         </div>
 
         {/* Right: 3D Spline */}
