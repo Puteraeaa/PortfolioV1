@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { Badge } from "./badge";
+// Removed unused import
 import { Button } from "./moving-border";
 
 export const HoverEffect = ({
@@ -26,10 +26,10 @@ export const HoverEffect = ({
       {items.map((item, idx) => {
         const isClickable = Boolean(item?.link);
 
-        const Wrapper = isClickable ? Link : "div";
+        const Wrapper: React.ElementType = isClickable ? Link : "div";
         const wrapperProps = isClickable
           ? { href: item.link }
-          : { role: "presentation" };
+          : { role: "presentation" as string };
 
         return (
           <div
