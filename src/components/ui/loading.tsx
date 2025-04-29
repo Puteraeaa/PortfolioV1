@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
-export default function Loading() {
+export default function   Loading() {
   const [text1, setText1] = useState(""); // Untuk teks pertama
   const [text2, setText2] = useState(""); // Untuk teks kedua
   const fullText1 = "Muhamad Putera Alfadri";
@@ -19,7 +19,7 @@ export default function Loading() {
     speed: number
   ) => {
     const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     let scrambled = fullText
       .split("")
       .map(() => chars[Math.floor(Math.random() * chars.length)])

@@ -1,11 +1,21 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Image from "next/image";
-import { useEffect, useRef,useState } from "react";
+import { useEffect, useRef } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 const AboutSection: React.FC = () => {
   const textRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -37,17 +47,11 @@ const AboutSection: React.FC = () => {
 
   return (
     <div className="max-w-screen-xl px-6 md:px-10 mx-auto" id="about">
-      <h1
-        className="mt-20 text-3xl md:text-4xl text-center font-semibold tracking-wide underline underline-offset-8 decoration-cyan-400"
-        data-aos="fade"
-      >
+      <h1 className="mt-20 text-3xl md:text-4xl text-center font-semibold tracking-wide underline underline-offset-8 decoration-cyan-400">
         About
       </h1>
 
-      <div
-        className="mt-20 flex flex-col lg:flex-row gap-10 lg:gap-20 items-center"
-        data-aos="fade-up"
-      >
+      <div className="mt-20 flex flex-col lg:flex-row gap-10 lg:gap-20 items-center">
         <div className="lg:w-1/2 order-2 lg:order-1">
           <div ref={textRef}>
             <p className="md:text-lg font-medium text">
@@ -60,7 +64,7 @@ const AboutSection: React.FC = () => {
                 ))}
             </p>
             <p className="mt-4 md:text-lg font-medium text">
-              {`My journey in the world of technology began with a deep curiosity about how things work, from software to the technology behind it. This curiosity drove me to explore various programming languages ​​and technologies, which further strengthened my seriousness in the world of IT. After growing a great interest in this field, I decided to continue the steps by choosing a vocational school as a place for me to study. I chose the Software and Game Development (PPLG) major as the first step to deepen my knowledge of technology. This major gave me the opportunity to learn the basics of software development, design applications, and create technology-based solutions. I can explore more things, hone my skills, and prepare myself for a career journey in the ever-growing world of technology.`.split(" ")
+              {`My journey in the world of technology began with a deep curiosity about how things work, from software to the technology behind it. This curiosity drove me to explore various programming languages ​​and technologies, which further strengthened my seriousness in the world of IT.`.split(" ")
                 .map((word, index) => (
                   <span key={index} className="word inline-block opacity-30">
                     {word}&nbsp;
@@ -68,11 +72,17 @@ const AboutSection: React.FC = () => {
                 ))}
             </p>
 
-            <button 
-              onClick={() => setIsOpen(true)}
-            className="group relative bg-slate-900 top-10 h-16 w-64 border-2 border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 hover:text-emerald-300 p-3 text-left before:absolute before:w-10 before:h-10 before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 before:rounded-full before:blur-lg before:transition-all before:duration-500 after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur hover:after:-right-6 hover:after:scale-110">
+            {/* Button to Open Modal */}
+            <a
+              className="mt-9 group relative bg-slate-900 h-16 w-64 flex items-center  border-2 border-teal-600 text-white text-base font-bold rounded-xl overflow-hidden transform transition-all duration-500 hover:scale-105 hover:border-emerald-400 hover:text-emerald-300 p-3 before:absolute before:w-10 before:h-10 before:content[''] before:right-2 before:top-2 before:z-10 before:bg-indigo-500 before:rounded-full before:blur-lg before:transition-all before:duration-500 after:absolute after:z-10 after:w-16 after:h-16 after:content[''] after:bg-teal-400 after:right-6 after:top-4 after:rounded-full after:blur-lg after:transition-all after:duration-500 hover:before:right-10 hover:before:-bottom-4 hover:before:blur hover:after:-right-6 hover:after:scale-110"
+              href="https://drive.google.com/uc?export=download&id=1lryqzu1KsrAamFgtOu3fEe8MabGEHzDM"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="group-hover:text-emerald-300">Curriculum Vitae</span>
-            </button>
+            </a>
+          
+
           </div>
         </div>
 
@@ -88,42 +98,6 @@ const AboutSection: React.FC = () => {
           </div>
         </div>
       </div>
-
-      {isOpen && (
-  <div
-    className="fixed inset-0 bg-black bg-opacity-50 z-40 flex justify-center items-center"
-    onClick={() => setIsOpen(false)} // Close modal on overlay click
-  >
-    {/* Modal Content */}
-    <div
-      className="bg-[#020817] rounded-lg w-full max-w-lg md:max-w-2xl lg:max-w-3xl p-4 md:p-6 relative mx-2 sm:mx-4"
-      onClick={(e) => e.stopPropagation()} // Prevent overlay click from closing modal
-    >
-      {/* Close Button */}
-      <button
-        className="absolute top-3 right-3 text-gray-400 hover:text-gray-200 focus:outline-none"
-        onClick={() => setIsOpen(false)}
-      >
-        ✕
-      </button>
-
-      {/* Modal Header */}
-      <h2 className="text-lg md:text-xl font-semibold mb-4 text-white text-center">
-        Curriculum Vitae
-      </h2>
-
-      {/* iframe Content */}
-      <div className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
-        <iframe
-          src="https://drive.google.com/file/d/1lryqzu1KsrAamFgtOu3fEe8MabGEHzDM/preview"
-          title="Google Drive Content"
-          className="w-full h-full rounded-lg scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-800"
-          allow="autoplay"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-)}
     </div>
   );
 };

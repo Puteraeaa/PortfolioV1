@@ -56,9 +56,23 @@ export const projects = [
   },
   {
     title: 'Smart-Learn',
-    description: 'Interactive tools to generate TailwindCSS code.',
+    description: 'Sistem Pembelajaran Berbasis Web.',
     link: 'https://sites.google.com/view/puteraeaportofolio/smart-learn',
     tech: ['Vite Js', 'TailwindCSS','API','Axios','Laravel'],
     url: '/images/project/smart.png',
+  },
+  {
+    title: 'Secure-Vault',
+    description: 'SecureVault is a secure, decentralized, and permanent blockchain-based storage solution',
+    link: 'https://github.com/ALZEE23/secure-vault',
+    tech: ['React Js', 'TailwindCSS','API','Axios','Motoko','Internet Computer'],
+    url: '/images/project/secure.png',
+  },
+  {
+    title: 'Reservasi Salon Online with Payment Gateway',
+    description: 'Reservasi Salon Online dengan Pembayaran menggunakan Midtrans.',
+    link: '',
+    tech: ['Laravel','TailwindCSS','Midtrans'],
+    url: '/images/project/salon.png',
   },
 ];

@@ -1,57 +1,65 @@
 import { RiArrowDownSLine } from "react-icons/ri";
-import { LinkPreview } from "./link-preview";
 import { ShootingStars } from "./shooting-stars";
 import { StarsBackground } from "./stars-background";
 import { useLenis } from "@studio-freight/react-lenis";
 import { cubicBezier } from "framer-motion";
+import Spline from "@splinetool/react-spline";
 
 export default function HeroSection() {
-    const lenis = useLenis();
+  const lenis = useLenis();
 
-    return (
-        <>
-            <ShootingStars />
-            <StarsBackground />
+  return (
+    <section className="relative h-screen w-full overflow-hidden bg-[#020617] ">
+      <StarsBackground />
+      <ShootingStars />
 
-            <div className="h-screen flex flex-col justify-center max-w-screen-xl px-6 md:px-10 mx-auto">
-                <div>
-                    <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight font-bold animate-dimmed">
-                        <h1>
-                            <span className="opacity-30 animate-dimmed [animation-delay:1400ms]">
-                                <span className="animate-hand-wave inline-block origin-[70%_70%] [animation-delay:2700ms]">✋🗿</span> Hi, I&apos;m
-                            </span>{" "}
-                            <LinkPreview url="#about" imageSrc="images/about.png" isStatic>
-                                <span className="text-cyan-400 opacity-30 animate-dimmed delay-500" onClick={() => lenis && lenis.scrollTo("#about", { offset: -100, easing: cubicBezier(0.65, 0, 0.35, 1), duration: 1 })}>
-                                  Muhamad Putera Alfadri.
-                                </span>
-                            </LinkPreview>{" "}
-                            <br className="hidden sm:block" />
-                            <span className="opacity-30 animate-dimmed [animation-delay:1700ms]">A</span>{" "}
-                            <LinkPreview url="#technologies" imageSrc="images/technologies.jpeg" isStatic>
-                                <span className="text-cyan-400 opacity-30 animate-dimmed [animation-delay:800ms]" onClick={() => lenis && lenis.scrollTo("#technologies", { offset: -100, easing: cubicBezier(0.65, 0, 0.35, 1), duration: 1 })}>
-                                    frontend developer,
-                                </span>
-                            </LinkPreview>{" "}
-                            <span className="opacity-30 animate-dimmed [animation-delay:2000ms]">who craft</span> <br className="hidden sm:block" />
-                            <LinkPreview url="#projects" imageSrc="images/projects.png" isStatic>
-                                <span className="text-cyan-400 opacity-30 animate-dimmed [animation-delay:1100ms]" onClick={() => lenis && lenis.scrollTo("#projects", { offset: -100, easing: cubicBezier(0.65, 0, 0.35, 1), duration: 1 })}>
-                                    digital experiences.
-                                </span>
-                            </LinkPreview>
-                        </h1>
-                    </div>
-                    <p className="mt-[-15px] md:mt-0 md:block lg:mt-4 font-semibold text-lg underline underline-offset-8 decoration-cyan-400 decoration-2 opacity-0 animate-fade-down [animation-delay:2500ms]">Fullstack Capable</p>
-                </div>
+      {/* Hero Container */}
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto h-full px-6 md:px-12 gap-12 lg:gap-20">
+        
+        {/* Left: Text */}
+        <div className="flex-1 pt-[300px] lg:pt-0  lg:text-left">
+          <h1 className="text-4xl sm:text-5xl md:text-3xl font-bold leading-tight tracking-tight">
+            <span className="inline-block animate-fade-in-up delay-200">Hi, I'm</span>
+            <br />
+            <span className="bg-cyan-400 text-transparent bg-clip-text animate-gradient-text text-[2rem] sm:text-[3.4rem] md:text-[3rem]">
+              Muhamad Putera Alfadri
+            </span>
+            <br />
+            <span className="text-white">
+              A{" "}
+              <span className="text-cyan-400">frontend developer</span>,<br />
+              who craft <span className="font-semibold text-white">digital experiences</span>.
+            </span>
+          </h1>
+          <p className="mt-6 text-lg font-medium underline underline-offset-8 decoration-cyan-400 decoration-2">
+            Fullstack Capable
+          </p>
+        </div>
 
-                <div className="absolute bottom-0 left-0 w-full flex justify-center pb-10 overflow-y-hidden" onClick={() => lenis && lenis.scrollTo("#about", { offset: -100, easing: cubicBezier(0.65, 0, 0.35, 1), duration: 1 })}>
-                    <div className="z-20 flex flex-col items-center cursor-pointer" data-aos="fade-up" data-aos-easing="ease-in" data-aos-delay="2800" data-aos-offset="0">
-                        <span className="animate-bounce text-3xl">
-                            <RiArrowDownSLine />
-                        </span>
-                        <span className="font-medium">Scroll down</span>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+        {/* Right: 3D Spline */}
+        <div className="hidden sm:flex flex-1 w-full max-w-xl h-[350px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+          <Spline scene="https://prod.spline.design/EA6z5qtSuY5avEaE/scene.splinecode" />
+        </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div
+        className="absolute bottom-0 left-0 w-full flex justify-center pb-10 cursor-pointer z-20"
+        onClick={() =>
+          lenis?.scrollTo("#about", {
+            offset: -100,
+            easing: cubicBezier(0.65, 0, 0.35, 1),
+            duration: 1,
+          })
+        }
+      >
+        <div className="flex flex-col items-center animate-fade-in-up delay-1000">
+          <span className="animate-bounce text-3xl text-white">
+            <RiArrowDownSLine />
+          </span>
+          <span className="font-medium text-white">Scroll down</span>
+        </div>
+      </div>
+    </section>
+  );
 }
