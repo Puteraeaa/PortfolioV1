@@ -20,7 +20,7 @@ export default function Home() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);
-        }, 5000);
+        }, 8000); // 5000 milliseconds = 5 seconds
 
         return () => clearTimeout(timer);
     }, []);

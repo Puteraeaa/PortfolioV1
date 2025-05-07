@@ -59,6 +59,19 @@ export default function Navbar() {
             })
           }
         >
+          Certification
+        </span>
+        <span
+          className='hover:text-cyan-400 transition-all duration-200 ease-in-out cursor-pointer'
+          onClick={() =>
+            lenis &&
+            lenis.scrollTo('#projects', {
+              offset: 550,
+              easing: cubicBezier(0.65, 0, 0.35, 1),
+              duration: 1,
+            })
+          }
+        >
           Projects
         </span>
         <span
@@ -66,7 +79,7 @@ export default function Navbar() {
           onClick={() =>
             lenis &&
             lenis.scrollTo('#technologies', {
-              offset: -100,
+              offset: -300,
               easing: cubicBezier(0.65, 0, 0.35, 1),
               duration: 1,
             })
@@ -130,7 +143,20 @@ export default function Navbar() {
           onClick={() =>
             lenis &&
             lenis.scrollTo('#projects', {
-              offset: -100,
+              offset: -200,
+              easing: cubicBezier(0.65, 0, 0.35, 1),
+              duration: 1,
+            })
+          }
+        >
+          Certification
+        </span>
+        <span
+          className='text-lg font-semibold tracking-wide hover:text-cyan-400 transition-all duration-200 ease-in-out cursor-pointer'
+          onClick={() =>
+            lenis &&
+            lenis.scrollTo('#projects', {
+              offset: 500,
               easing: cubicBezier(0.65, 0, 0.35, 1),
               duration: 1,
             })
@@ -143,7 +169,7 @@ export default function Navbar() {
           onClick={() =>
             lenis &&
             lenis.scrollTo('#technologies', {
-              offset: -100,
+              offset: -200,
               easing: cubicBezier(0.65, 0, 0.35, 1),
               duration: 1,
             })

@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function FooterSection() {
     return (
@@ -32,22 +31,6 @@ export default function FooterSection() {
                         </Link>
                         .
                     </p>
-
-                    <p className="mt-4">
-                        Inspired by{" "}
-                        <Link href="https://fazzaamiarso-com-v3-svelte.vercel.app" target="_blank" className="text-white/70 font-medium hover:text-cyan-400 transition-all duration-150 ease-in-out">
-                            Fazza
-                        </Link>
-                        ,{" "}
-                        <Link href="https://brittanychiang.com" target="_blank" className="text-white/70 font-medium hover:text-cyan-400 transition-all duration-150 ease-in-out">
-                            Britanny
-                        </Link>
-                        ,{" "}
-                        <Link href="https://aafrzl.my.id" target="_blank" className="text-white/70 font-medium hover:text-cyan-400 transition-all duration-150 ease-in-out">
-                            Afrizal
-                        </Link>
-                        .
-                    </p>
                 </div>
                 <div className="">
                     <p>© 2025 Muhamad Putera Alfadri -- Bogor, Indonesia</p>
@@ -59,8 +42,8 @@ export default function FooterSection() {
                         <Link href="https://github.com/Puteraeaa" className="hover:text-cyan-400 transition-all duration-150 ease-in-out">
                             <FaGithub />
                         </Link>
-                        <Link href="mailto:utasuta1234@gmail" className="hover:text-cyan-400 transition-all duration-150 ease-in-out">
-                            <IoMdMail />
+                        <Link href="https://www.linkedin.com/in/puteraea/" className="hover:text-cyan-400 transition-all duration-150 ease-in-out">
+                            <FaLinkedin />
                         </Link>
                     </div>
                 </div>

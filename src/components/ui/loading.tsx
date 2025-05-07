@@ -1,60 +1,48 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import RotatingText from "./RotatingText";
 
-export default function   Loading() {
-  const [text1, setText1] = useState(""); // Untuk teks pertama
-  const [text2, setText2] = useState(""); // Untuk teks kedua
-  const fullText1 = "Muhamad Putera Alfadri";
-  const fullText2 = "Portfolio";
+export default function Loading() {
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    // Mulai animasi teks pertama dan kedua secara bersamaan
-    scrambleText(fullText1, setText1, 150); 
-    scrambleText(fullText2, setText2, 150);
+    const timer = setTimeout(() => {
+      setIsVisible(false);
+    }, 7000); // Durasi loading (3 detik)
+
+    return () => clearTimeout(timer);
   }, []);
 
-  const scrambleText = (
-    fullText: string,
-    setText: React.Dispatch<React.SetStateAction<string>>,
-    speed: number
-  ) => {
-    const chars =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-    let scrambled = fullText
-      .split("")
-      .map(() => chars[Math.floor(Math.random() * chars.length)])
-      .join("");
-
-    setText(scrambled);
-
-    let i = 0;
-    const interval = setInterval(() => {
-      scrambled = scrambled
-        .split("")
-        .map((_, index) => {
-          if (index < i) return fullText[index];
-          return chars[Math.floor(Math.random() * chars.length)];
-        })
-        .join("");
-
-      setText(scrambled);
-
-      if (i >= fullText.length) {
-        clearInterval(interval);
-        setText(fullText);
-      }
-      i++;
-    }, speed);
-  };
-
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col gap-2 sm:gap-4">
-        <div className="flex gap-2 sm:gap-4">
-          <h1 className="text-xl md:text-3xl font-semibold text-cyan-400">
-            {text1}
+    <div
+      className={`fixed top-0 left-0 w-full h-screen flex justify-center items-center bg-[#020617] text-white z-50 transition-all duration-1000 ease-in-out ${
+        isVisible
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <div className="flex flex-col gap-4 sm:gap-6 items-center">
+        <div className="flex flex-col sm:flex-row items-center">
+          <h1 className="text-3xl sm:text-4xl font-bold animate-pulse">
+            Muhamad Putera Alfadri
           </h1>
-          <h1 className="text-xl md:text-3xl font-semibold">{text2}</h1>
+          <RotatingText
+            texts={[
+              "Frontend Developer",
+              "React Enthusiast",
+              "UI/UX Designer",
+              "Tech Explorer",
+            ]}
+            mainClassName="px-3 text-cyan-400 text-3xl sm:text-4xl font-bold overflow-hidden py-1 sm:py-2 md:py-3 justify-center rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"
+            staggerFrom={"last"}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-120%" }}
+            staggerDuration={0.025}
+            splitLevelClassName="overflow-hidden pb-1 sm:pb-2 md:pb-2"
+            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+            rotationInterval={2000}
+          />
         </div>
       </div>
     </div>

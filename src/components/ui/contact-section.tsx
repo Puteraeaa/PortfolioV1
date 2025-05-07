@@ -24,8 +24,8 @@ export default function ContactSection() {
                         <CgArrowTopRight />
                     </span>
                 </Link>
-                <Link href={"mailto:utasuta12345@gmail.com"} target="_blank" className="md:text-xl font-semibold tracking-wide flex gap-1 items-center group">
-                    Email
+                <Link href={"https://www.linkedin.com/in/puteraea/"} target="_blank" className="md:text-xl font-semibold tracking-wide flex gap-1 items-center group">
+                    LinkedIn
                     <span className="text-xl md:text-2xl group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-200 ease-in-out">
                         <CgArrowTopRight />
                     </span>
