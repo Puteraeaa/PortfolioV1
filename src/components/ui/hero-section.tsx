@@ -18,7 +18,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between max-w-7xl mx-auto h-full px-6 md:px-12 gap-12 lg:gap-20">
         
         {/* Left: Text */}
-        <div className="flex-1 pt-[150px] lg:pt-0 lg:text-left">
+        <div className="flex-1 pt-20 lg:pt-0 lg:text-left">
   <h1 className="text-4xl sm:text-5xl md:text-3xl font-bold leading-tight tracking-tight">
     <span className="inline-block animate-fade-in-up delay-200">Hi, I&apos;m</span><br />
     <span className="bg-cyan-400 text-transparent bg-clip-text animate-gradient-text text-[2.5rem] sm:text-[3.4rem] md:text-[3rem]">
@@ -33,22 +33,6 @@ export default function HeroSection() {
   <p className="mt-6 text-lg font-medium text-white">
     Bridging design and logic to build seamless digital experiences.
   </p>
-
-  <div className="mt-8">
-    <button
-      onClick={() =>
-        lenis &&
-        lenis.scrollTo('#technologies', {
-          offset: 300,
-          easing: cubicBezier(0.65, 0, 0.35, 1),
-          duration: 1,
-        })
-      }
-      className="inline-block px-6 py-3 text-white bg-cyan-500 hover:bg-cyan-600 rounded-full shadow-md transition-all duration-300"
-    >
-      Hire Me
-    </button>
-  </div>
 </div>
 
 
