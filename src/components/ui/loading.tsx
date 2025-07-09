@@ -28,9 +28,8 @@ export default function Loading() {
           </h1>
           <RotatingText
             texts={[
-              "Frontend Developer",
-              "React Enthusiast",
-              "UI/UX Designer",
+              "Full Stack Web Developer",
+              "React & Laravel Specialist",
               "Tech Explorer",
             ]}
             mainClassName="px-3 text-cyan-400 text-3xl sm:text-4xl font-bold overflow-hidden py-1 sm:py-2 md:py-3 justify-center rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-300"

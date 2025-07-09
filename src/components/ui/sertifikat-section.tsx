@@ -49,6 +49,12 @@ export const projects = [
     url: '/images/sertifikat/dicoding-mdp.png',
   },
   {
+    title: 'Coding Camp 2025',
+    description: 'Coding Camp 2025 yang didukung oleh DBS Foundation di jalur pembelajaran Pengembang Front-End dan Back-End',
+    link: '',
+    url: '/images/sertifikat/dbs.jpg',
+  },
+  {
     title: 'Belajar Dasar Pemrograman Web',
     description: 'Sertifikat Kelulusan Dicoding',
     link: 'https://www.dicoding.com/certificates/1RXYENK99ZVM',
